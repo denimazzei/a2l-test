@@ -1,5 +1,7 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
+const { typeDefs, resolvers } = require("./schemas");
+
 const cors = require("cors");
 
 const path = require("path");
@@ -7,7 +9,10 @@ const app = express();
 
 const publicPath = path.join(__dirname, "..", "public");
 const port = process.env.PORT || 3000;
-const server = new ApolloServer({});
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 server.applyMiddleware({ app });
 
