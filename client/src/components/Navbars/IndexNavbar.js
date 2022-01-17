@@ -84,7 +84,7 @@ export default function IndexNavbar() {
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <a href="/home" onClick={(e) => e.preventDefault()}>
                   Adventure 2 Learning
                 </a>
               </Col>

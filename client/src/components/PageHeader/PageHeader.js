@@ -1,9 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
-import { Container, Row, Col, Button, CardImg } from "reactstrap";
+import { Container, Row, Col, CardImg } from "reactstrap";
+import Auth from "../../utils/auth";
 
-export default function PageHeader() {
+const PageHeader = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
     <div className="page-header header-filter">
       <div className="squares square1" />
@@ -25,16 +32,39 @@ export default function PageHeader() {
           </h3>
           <Row>
             <Col>
-              <Button color="success" href="/register-page">
-                Register
-              </Button>
-              <Button color="warning" href="/login-page">
-                Login
-              </Button>
+              <div>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Link className="btn btn-lg btn-info m-2" to="/me">
+                      {Auth.getProfile().data.username}'s profile
+                    </Link>
+                    <button
+                      className="btn btn-lg btn-light m-2"
+                      onClick={logout}
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link className="btn btn-lg btn-info m-2" to="/login-page">
+                      Login
+                    </Link>
+                    <Link
+                      className="btn btn-lg btn-warning m-2"
+                      to="/register-page"
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
+              </div>
             </Col>
           </Row>
         </div>
       </Container>
     </div>
   );
-}
+};
+
+export default PageHeader;
