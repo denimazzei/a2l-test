@@ -26,6 +26,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
+//routes
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+
 db.once("open", () => {
   app.listen(PORT, () => {
     console.log(`API server running on port ${PORT}!`);
