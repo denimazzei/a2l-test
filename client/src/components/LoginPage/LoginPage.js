@@ -32,10 +32,10 @@ export default function LoginPage() {
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
   React.useEffect(() => {
-    document.body.classList.toggle("register-page");
+    document.body.classList.toggle("login-page");
     document.documentElement.addEventListener("mousemove", followCursor);
     return function cleanup() {
-      document.body.classList.toggle("register-page");
+      document.body.classList.toggle("login-page");
       document.documentElement.removeEventListener("mousemove", followCursor);
     };
   }, []);
