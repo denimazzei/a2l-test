@@ -103,7 +103,7 @@ export default function RegisterPage() {
                             </InputGroupText>
                           </InputGroup>
                           <Input
-                            placeholder="Full Name"
+                            placeholder="Name"
                             type="text"
                             onFocus={(e) => setFullNameFocus(true)}
                             onBlur={(e) => setFullNameFocus(false)}
@@ -148,7 +148,7 @@ export default function RegisterPage() {
                             <Input type="checkbox" />
                             <span className="form-check-sign" />I agree to the{" "}
                             <a
-                              href="#pablo"
+                              href="#terms"
                               onClick={(e) => e.preventDefault()}
                             >
                               terms and conditions
