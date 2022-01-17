@@ -19,7 +19,7 @@ export default function PageHeader() {
             alt="..."
             src={require("../../assets/img/A2L-Logo.png").default}
           />
-          <h1 className="h1-seo">A2L</h1>
+
           <h3 className="d-none d-sm-block">
             The nation's #1 educational video streaming platform for teachers.
           </h3>
