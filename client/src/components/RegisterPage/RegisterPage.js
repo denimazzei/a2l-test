@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { Link } from "react-router-dom";
+
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+
+import Auth from "./utils/auth";
 
 import classnames from "classnames";
 // reactstrap components
@@ -58,6 +65,37 @@ export default function RegisterPage() {
         "deg)"
     );
   };
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <IndexNavbar />
@@ -90,72 +128,94 @@ export default function RegisterPage() {
                       <CardTitle tag="h4">Register</CardTitle>
                     </CardHeader>
                     <CardBody>
-                      <Form className="form">
-                        <InputGroup
-                          className={classnames({
-                            "input-group-focus": fullNameFocus,
-                          })}
-                        >
-                          <InputGroup addonType="prepend">
-                            <InputGroupText>
-                              <i className="tim-icons icon-single-02" />
-                            </InputGroupText>
+                      {data ? (
+                        <p>
+                          Success! You may now head{" "}
+                          <Link to="/landing-page">
+                            back to the video search.
+                          </Link>
+                        </p>
+                      ) : (
+                        <Form className="form" onSubmit={handleFormSubmit}>
+                          <InputGroup
+                            className={classnames({
+                              "input-group-focus": fullNameFocus,
+                            })}
+                          >
+                            <InputGroup addonType="prepend">
+                              <InputGroupText>
+                                <i className="tim-icons icon-single-02" />
+                              </InputGroupText>
+                            </InputGroup>
+                            <Input
+                              placeholder="Name"
+                              type="text"
+                              value={formState.name}
+                              onChange={handleChange}
+                              onFocus={(e) => setFullNameFocus(true)}
+                              onBlur={(e) => setFullNameFocus(false)}
+                            />
                           </InputGroup>
-                          <Input
-                            placeholder="Name"
-                            type="text"
-                            onFocus={(e) => setFullNameFocus(true)}
-                            onBlur={(e) => setFullNameFocus(false)}
-                          />
-                        </InputGroup>
-                        <InputGroup
-                          className={classnames({
-                            "input-group-focus": emailFocus,
-                          })}
-                        >
-                          <InputGroup addonType="prepend">
-                            <InputGroupText>
-                              <i className="tim-icons icon-email-85" />
-                            </InputGroupText>
+                          <InputGroup
+                            className={classnames({
+                              "input-group-focus": emailFocus,
+                            })}
+                          >
+                            <InputGroup addonType="prepend">
+                              <InputGroupText>
+                                <i className="tim-icons icon-email-85" />
+                              </InputGroupText>
+                            </InputGroup>
+                            <Input
+                              placeholder="Email"
+                              type="text"
+                              name="email"
+                              value={formState.email}
+                              onChange={handleChange}
+                              onFocus={(e) => setEmailFocus(true)}
+                              onBlur={(e) => setEmailFocus(false)}
+                            />
                           </InputGroup>
-                          <Input
-                            placeholder="Email"
-                            type="text"
-                            onFocus={(e) => setEmailFocus(true)}
-                            onBlur={(e) => setEmailFocus(false)}
-                          />
-                        </InputGroup>
-                        <InputGroup
-                          className={classnames({
-                            "input-group-focus": passwordFocus,
-                          })}
-                        >
-                          <InputGroup addonType="prepend">
-                            <InputGroupText>
-                              <i className="tim-icons icon-lock-circle" />
-                            </InputGroupText>
+                          <InputGroup
+                            className={classnames({
+                              "input-group-focus": passwordFocus,
+                            })}
+                          >
+                            <InputGroup addonType="prepend">
+                              <InputGroupText>
+                                <i className="tim-icons icon-lock-circle" />
+                              </InputGroupText>
+                            </InputGroup>
+                            <Input
+                              placeholder="Password"
+                              name="password"
+                              type="password"
+                              value={formState.password}
+                              onChange={handleChange}
+                              onFocus={(e) => setPasswordFocus(true)}
+                              onBlur={(e) => setPasswordFocus(false)}
+                            />
                           </InputGroup>
-                          <Input
-                            placeholder="Password"
-                            type="text"
-                            onFocus={(e) => setPasswordFocus(true)}
-                            onBlur={(e) => setPasswordFocus(false)}
-                          />
-                        </InputGroup>
-                        <FormGroup check className="text-left">
-                          <Label check>
-                            <Input type="checkbox" />
-                            <span className="form-check-sign" />I agree to the{" "}
-                            <a
-                              href="#terms"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              terms and conditions
-                            </a>
-                            .
-                          </Label>
-                        </FormGroup>
-                      </Form>
+                          <FormGroup check className="text-left">
+                            <Label check>
+                              <Input type="checkbox" />
+                              <span className="form-check-sign" />I agree to the{" "}
+                              <a
+                                href="#terms"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                terms and conditions
+                              </a>
+                              .
+                            </Label>
+                          </FormGroup>
+                        </Form>
+                      )}
+                      {error && (
+                        <div className="my-3 p-3 bg-danger text-white">
+                          {error.message}
+                        </div>
+                      )}
                     </CardBody>
                     <CardFooter>
                       <Button className="btn-round" color="primary" size="lg">
