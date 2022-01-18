@@ -12,14 +12,8 @@ const PageHeader = () => {
   };
 
   return (
-    <div className="page-header header-filter">
-      <div className="squares square1" />
-      <div className="squares square2" />
-      <div className="squares square3" />
-      <div className="squares square4" />
-      <div className="squares square5" />
-      <div className="squares square6" />
-      <div className="squares square7" />
+    <div className="page-header header-filter content-center brand">
+      
       <Container>
         <div className="content-center brand">
           <CardImg
@@ -27,7 +21,7 @@ const PageHeader = () => {
             src={require("../../assets/img/A2L-Logo.png").default}
           />
 
-          <h3 className="d-none d-sm-block">
+          <h3 className="d-none d-sm-block ">
             The nation's #1 educational video streaming platform for teachers.
           </h3>
           <Row>
@@ -51,7 +45,7 @@ const PageHeader = () => {
                       Login
                     </Link>
                     <Link
-                      className="btn btn-lg btn-warning m-2"
+                      className="btn btn-lg btn-danger m-2"
                       to="/register-page"
                     >
                       Register
