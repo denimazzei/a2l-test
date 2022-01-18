@@ -11,7 +11,7 @@ export default function SearchMovies() {
     e.preventDefault();
     console.log("submitting");
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=f5f10715db30f53f7bbddc767108dd7c&language=en-US&query=${query}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=f5f10715db30f53f7bbddc767108dd7c&language=en-US&query=${query}&include_adult=false`;
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -23,12 +23,12 @@ export default function SearchMovies() {
 
   return (
     <>
-      <Form className="form" onSubmit={searchMovies}>
-        <Label className="label" htmlForm="query">
-          Video Name
+      <Form className="searchform" onSubmit={searchMovies}>
+        <Label className="searchlabel" htmlForm="query">
+          Try a Video Name
         </Label>
         <Input
-          className="input"
+          className="searchinput"
           type="text"
           name="query"
           placeholder="i.e Toy Story"
@@ -43,7 +43,7 @@ export default function SearchMovies() {
         {movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <div className="card" key={movie.id}>
+            <div className="searchcard" key={movie.id}>
               <img
                 className="card--image"
                 src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
