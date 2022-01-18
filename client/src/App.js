@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import PageHeader from "./components/PageHeader/PageHeader.js";
 import LandingPage from "./components/LandingPage.js";
@@ -14,6 +14,12 @@ import RegisterPage from "./components/RegisterPage/RegisterPage.js";
 import LoginPage from "./components/LoginPage/LoginPage.js";
 import IndexNavbar from './components/Navbars/IndexNavbar.js';
 import Footer from './components/Footer/Footer.js';
+import { Container } from 'reactstrap';
+import Trending from './pages/trending'
+import Movies from './pages/movies'
+import Favorites from './pages/favorites'
+import Series from './pages/series'
+import Search from './pages/search'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -58,6 +64,17 @@ function App() {
             <Route exact path="/landing-page">
               <LandingPage />
             </Route>
+            <Container>
+              <Switch>
+                <Route  path="/trending" component={Trending} exact/>
+                <Route  path="/favories" component={Favorites}/>
+                <Route  path="/movies" component={Movies}/>
+                <Route  path="/search" component={Search}/>
+                <Route  path="/series" component={Series}/>
+              </Switch>
+            </Container>
+
+      
             
           </div>
           <Footer />

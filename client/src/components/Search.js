@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Label, Form, Input } from "reactstrap";
+import SearchFooter from "./SearchFooter";
 
 export default function SearchMovies() {
   //states - input query, movies
@@ -61,6 +62,7 @@ export default function SearchMovies() {
             </div>
           ))}
       </div>
+      <SearchFooter/>
     </>
   );
 }

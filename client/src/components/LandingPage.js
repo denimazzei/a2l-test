@@ -16,9 +16,7 @@ import {
   Col,
 } from "reactstrap";
 
-// core components
 
-//import bigChartData from "variables/charts.js";
 
 export default function LandingPage() {
   React.useEffect(() => {
@@ -30,7 +28,6 @@ export default function LandingPage() {
   }, []);
   return (
     <>
-    
       <div className="wrapper">
         <div className="page-header">
           <div className="content-center">
@@ -60,7 +57,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-       
       </div>
     </>
   );
