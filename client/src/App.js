@@ -66,8 +66,8 @@ function App() {
             </Route>
             <Container>
               <Switch>
-                <Route  path="/trending" component={Trending} exact/>
-                <Route  path="/favories" component={Favorites}/>
+                <Route  path="/trending" component={Trending}/>
+                <Route  path="/favorites" component={Favorites}/>
                 <Route  path="/movies" component={Movies}/>
                 <Route  path="/search" component={Search}/>
                 <Route  path="/series" component={Series}/>

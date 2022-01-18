@@ -5,9 +5,9 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MovieIcon from '@material-ui/icons/Movie';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
-import SearchIcon from '@material-ui/icons/Search';
-import TVIcon from '@material-ui/icons/Tv';
 
+import TVIcon from '@material-ui/icons/Tv';
+//import { useHistory } from "react-router-dom";
 
 
 
@@ -27,6 +27,9 @@ const useStyles = makeStyles({
 export default function SearchFooter() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  
+
+  
 
   return (
     <BottomNavigation
@@ -45,8 +48,7 @@ export default function SearchFooter() {
       style={{ color: "white" }} label="Movies" icon={<MovieIcon />} />
       <BottomNavigationAction 
       style={{ color: "white" }} label="Series" icon={<TVIcon />} />
-      <BottomNavigationAction 
-      style={{ color: "white" }} label="Search" icon={<SearchIcon />} />
+      
     </BottomNavigation>
   );
 }
