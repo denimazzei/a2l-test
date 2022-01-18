@@ -10,7 +10,6 @@ import "./index.css";
 import Index from "views/Index.js";
 import LandingPage from "components/LandingPage.js";
 import RegisterPage from "components/RegisterPage/RegisterPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
 import LoginPage from "components/LoginPage/LoginPage";
 
 ReactDOM.render(
@@ -25,10 +24,7 @@ ReactDOM.render(
         path="/register-page"
         render={(props) => <RegisterPage {...props} />}
       />
-      <Route
-        path="/profile-page"
-        render={(props) => <ProfilePage {...props} />}
-      />
+      
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Redirect from="/" to="/home" />
     </Switch>
