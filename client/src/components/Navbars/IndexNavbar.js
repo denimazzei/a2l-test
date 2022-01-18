@@ -21,7 +21,7 @@ const IndexNavbar = () => {
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/landing-page">
-                {Auth.getProfile().data.username}'s video dashboard
+                {Auth.getProfile().data.name}'s video dashboard
               </Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout

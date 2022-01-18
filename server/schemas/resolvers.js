@@ -39,7 +39,7 @@ const resolvers = {
       if (!correctPw) {
         throw new AuthenticationError("Password does not match");
       }
-
+console.log(user);
       const token = signToken(user);
 
       return { token, user };

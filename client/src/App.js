@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -46,6 +46,8 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [user, setUser] = useState("")
+  console.log(user);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -53,10 +55,10 @@ function App() {
           <IndexNavbar />
           <div className="container">
             <Route exact path="/">
-              <PageHeader />
+              <PageHeader user={user}/>
             </Route>
             <Route exact path="/login-page">
-              <LoginPage />
+              <LoginPage setUser={setUser}/>
             </Route>
             <Route exact path="/register-page">
               <RegisterPage />
