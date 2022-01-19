@@ -76,7 +76,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-warning"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

@@ -32,13 +32,13 @@ export default function LandingPage() {
       <div className="wrapper">
         <div className="page-header">
           <div className="content-center">
-            <Row className="row-grid justify-content-between align-items-center text-left">
-              <Col lg="6" md="6">
+            <Row className="justify-flex-wrap align-items-center">
+              <Col >
                 <h1 className="text-black">
                   Search for Quality <br />
                   <span className="text-black">Content</span>
                 </h1>
-                <p className="text-black mb-3">
+                <p className="text-black mb-3 ">
                   With over 10,000 vetted educational videos, you can leverage
                   the power of video and kinesthetics to engage today's
                   learners.

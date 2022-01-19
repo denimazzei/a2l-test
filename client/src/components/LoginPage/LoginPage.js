@@ -47,12 +47,12 @@ const Login = ({setUser}) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <h4 className="card-header bg-light text-dark p-2">Login</h4>
           <div className="card-body">
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the video page.</Link>
+                <Link to="/landing-page">to the video page.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -73,7 +73,7 @@ const Login = ({setUser}) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-danger"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

@@ -16,24 +16,25 @@ const PageHeader = () => {
       
       <Container>
         <div className="content-center brand">
-          <CardImg
+          <CardImg className="img-responsive flex-row align-center"
             alt="..."
             src={require("../../assets/img/A2L-Logo.png").default}
+            width="500" height="500"
           />
 
           <h3 className="d-none d-sm-block ">
             The nation's #1 educational video streaming platform for teachers.
           </h3>
-          <Row>
+          <Row className="flex-row justify-center mb-4">
             <Col>
-              <div>
+              <div className="flex-row align-center">
                 {Auth.loggedIn() ? (
                   <>
-                    <Link className="btn btn-lg btn-info m-2" to="/me">
+                    <Link className="btn btn-lg btn-info m-2 center" to="/landing-page">
                       {Auth.getProfile().data.name}'s profile
                     </Link>
                     <button
-                      className="btn btn-lg btn-light m-2"
+                      className="btn btn-lg btn-light m-2 center" to="/"
                       onClick={logout}
                     >
                       Logout
@@ -41,7 +42,7 @@ const PageHeader = () => {
                   </>
                 ) : (
                   <>
-                    <Link className="btn btn-lg btn-info m-2" to="/login-page">
+                    <Link className="btn btn-lg btn-info m-2  " to="/login-page">
                       Login
                     </Link>
                     <Link

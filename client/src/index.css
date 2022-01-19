@@ -204,6 +204,8 @@ sup {
 img {
   border-style: none;
   align-content: center;
+  display: block;
+  margin: auto;
 }
 
 /* Forms
@@ -436,6 +438,8 @@ h6 {
   font-family: 'JetBrains Mono', monospace;
   margin: 0 0 0.5rem;
   line-height: 1.25;
+  display: block;
+  text-align: center;
 }
 
 h1 {
@@ -478,6 +482,13 @@ dl {
 label {
   display: inline-block;
 }
+
+.pageButton {
+  display: block;
+  margin: auto;
+  align-content: center;
+}
+
 
 input,
 select,
@@ -1038,7 +1049,7 @@ a:hover {
 
 .btn {
   text-align: center;
-  display: inline-block;
+  display: block;
   padding: 0.5rem 1.2rem;
   margin: 0;
   text-decoration: none;
@@ -1067,6 +1078,8 @@ a:hover {
 .btn.btn-lg {
   font-size: 1.25rem;
   padding: 0.8rem 1.4rem;
+  display: inline-block;
+  align-content: center
 }
 
 .btn.btn-block {
