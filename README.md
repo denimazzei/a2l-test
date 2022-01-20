@@ -46,7 +46,7 @@ This project is deployed on [Heroku](https://a2l-test.herokuapp.com/)
 
 ![register]<img width="863" alt="Screen Shot 2022-01-19 at 8 36 46 PM" src="https://user-images.githubusercontent.com/84485576/150262007-af671d63-775a-4409-8462-fb222b0d398a.png">
 
-![dashboard]<img width="854" alt="Screen Shot 2022-01-19 at 8 37 27 PM" src="https://user-images.githubusercontent.com/84485576/150262089-0db3d829-9cdd-4015-9672-173d3cc509f8.png">
+![dashboard]<img width="842" alt="Screen Shot 2022-01-19 at 8 39 02 PM" src="https://user-images.githubusercontent.com/84485576/150262252-c2e80478-ceb5-4e59-9869-0ee92710b18b.png">
 
 
 ## Technologies and Packages
