@@ -40,16 +40,21 @@ As a start-up, this method is more cost-effective and can increase the amount of
 
 This project is deployed on [Heroku](https://a2l-test.herokuapp.com/)
 
-![homepage] 
-![login]
-![register]
-![dashboard]
+![homepage] <img width="999" alt="Screen Shot 2022-01-18 at 10 46 59 PM" src="https://user-images.githubusercontent.com/84485576/150260957-40c46b29-eb91-4010-9890-dd86185fcca7.png">
+
+![login]<img width="872" alt="Screen Shot 2022-01-19 at 8 12 27 PM" src="https://user-images.githubusercontent.com/84485576/150260992-8634de04-758c-4b90-9afe-58cf921118d8.png">
+
+![register]<img width="863" alt="Screen Shot 2022-01-19 at 8 36 46 PM" src="https://user-images.githubusercontent.com/84485576/150262007-af671d63-775a-4409-8462-fb222b0d398a.png">
+
+![dashboard]<img width="854" alt="Screen Shot 2022-01-19 at 8 37 27 PM" src="https://user-images.githubusercontent.com/84485576/150262089-0db3d829-9cdd-4015-9672-173d3cc509f8.png">
+
 
 ## Technologies and Packages
 
 * React
 * Node
-* Express
+* Express!
+
 * Apollo
 * GraphQL
 * MongoDB
@@ -77,3 +82,4 @@ This project was designed and developed by Deni Mazzei as part of the UTSA Codin
 ## Contact
 
 For questions, support, or recommendations regarding this repo or gameplay, please contact !(dconkell@gmail.com) and include "A2L App" in the subject line. 
+
